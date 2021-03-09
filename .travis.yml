@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "12"
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+    reciepents:
+      - me@carlosvldz.com
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: a21dca3d-5594-495b-9ab9-2f2dc6e51c6a
+  app: p-store-cvldzzz
+  on:
+    repo: carlosvldz/platzi-store-backend
